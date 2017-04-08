@@ -8,11 +8,11 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     firebase: {
-      apiKey: 'xyz',
-      authDomain: 'YOUR-FIREBASE-APP.firebaseapp.com',
-      databaseURL: 'https://YOUR-FIREBASE-APP.firebaseio.com',
-      storageBucket: 'YOUR-FIREBASE-APP.appspot.com',
-      messagingSenderId: '1234'
+    apiKey: "AIzaSyDg7JArfhOEj3u16eI3V7dly8JayvctQOA",
+    authDomain: "krishnanatarajan-a77c0.firebaseapp.com",
+    databaseURL: "https://krishnanatarajan-a77c0.firebaseio.com",
+    storageBucket: "krishnanatarajan-a77c0.appspot.com",
+    messagingSenderId: "99133433578"
     },
 
     // if using ember-cli-content-security-policy

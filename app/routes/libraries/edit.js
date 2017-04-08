@@ -9,7 +9,7 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
 
-    controller.set('title', 'Edit library');
+    controller.set('title', 'Edit person');
     controller.set('buttonLabel', 'Save changes');
   },
 

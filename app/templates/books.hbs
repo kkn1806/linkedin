@@ -1,76 +1,33 @@
-<h1>Books</h1>
+{{title "LinkedIn"}}
+<div class="jumbotron text-center">
 
-<table class="table table-bordered table-striped">
-  <thead>
-  <tr>
-    <th class="vtop wider">
-      Author
-      <br><small class="small not-bold">(Click on the name for editing)</small>
-    </th>
-    <th>
-      Title
-      <br><small class="small not-bold">(Click on the title for editing)</small>
-    </th>
-    <th class="vtop">Release Year</th>
-    <th class="vtop">
-      Library
-      <br><small class="small not-bold">(Click on the name for editing)</small>    </th>
-  </tr>
-  </thead>
-  <tbody>
-  {{#each model as |book|}}
-    <tr>
+    <img src= https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2000px-LinkedIn_Logo.svg.png width="350" height="80">
+<br/><br/>   
+<style>
+body{background-image: url("https://www.hogarthww.com/wp-content/uploads/2014/01/background.jpg") }
+</style>
 
-      <td>
-        {{#if book.isAuthorEditing}}
+    <p>Use your E-mail/User ID and password to Log In.</p>
+<br/><br/>
 
-          {{author-select
-            book=book
-            authors=authors
-            default=book.author
-            action='saveAuthor'}}
+    <div class="form-horizontal form-group form-group-lg row">
+        <div class="col-xs-10 col-xs-offset-3 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+          {{input type="email" value=emailAddress class="form-control" placeholder="E-mail address/User ID" autofocus="autofocus"}}
+        </div>
+	<br/><br/>
+	<div class="col-xs-10 col-xs-offset-0 col-sm-offset-0 col-sm-4 col-md-2">
+            <button class="btn btn-primary btn-lg btn-block" {{action 'saveInvitation'}} disabled={{isDisabled}}>Log In</button>
+        </div>
+        
+	<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+          {{input type="password" value=passwords class="form-control" placeholder="Password" autofocus="autofocus"}}
+        </div>
 
-          <button class="btn btn-danger" {{action 'cancelAuthorEdit' book}}>Cancel</button>
+    </div>
 
-        {{else}}
-          <span {{action 'editAuthor' book}}>{{book.author.name}}</span>
-        {{/if}}
-      </td>
+    {{#if responseMessage}}
+        <div class="alert alert-success" role="alert">{{responseMessage}}</div>
+    {{/if}}
 
-      <td>
-        {{#if book.isEditing}}
-          <form {{action 'saveBook' book on='submit'}} class="form-inline">
-            <div class="input-group">
-              {{input value=book.title class='form-control'}}
-              <div class="input-group-btn">
-                <button type="submit" class="btn btn-success" disabled={{book.isNotValid}}>Save</button>
-                <button class="btn btn-danger" {{action 'cancelBookEdit' book}}>Cancel</button>
-              </div>
-            </div>
-          </form>
-        {{else}}
-          <span {{action 'editBook' book}}>{{book.title}}</span>
-        {{/if}}
-      </td>
-
-      <td>{{book.releaseYear}}</td>
-      <td>
-
-        {{#if book.isLibraryEditing}}
-
-          {{library-select
-            book=book
-            libraries=libraries
-            default=book.library
-            action='saveLibrary'}}
-
-          <button class="btn btn-danger" {{action 'cancelLibraryEdit' book}}>Cancel</button>
-
-        {{else}}
-          <span {{action 'editLibrary' book}}>{{book.library.name}}</span>
-        {{/if}}
-      </td>
-    </tr>
-  {{/each}}
-  </tbody>
-</table>
+    <br/><br/>
+</div>

@@ -1,17 +1,18 @@
-<h1>Invitations</h1>
+{{title "LinkedIn-Registrations"}}
+<h1>Registrations</h1>
 
 <table class="table table-bordered table-striped">
     <thead>
       <tr>
-          <th>ID</th>
           <th>E-mail</th>
+          <th>User ID</th>
       </tr>
     </thead>
     <tbody>
     {{#each model as |invitation|}}
         <tr>
-            <th>{{invitation.id}}</th>
             <td>{{invitation.email}}</td>
+            <th>{{invitation.id}}</th>
         </tr>
     {{/each}}
 
